@@ -1,23 +1,26 @@
 <?php
-interface UserOne
-{
-    // sama dengan method dalam interface UserTwo
-    function username($username);
+interface User {
+    public function username($username);
+    public function gender();
 }
 
-interface UserTwo
-{
-    // sama dengan method dalam interface UserOne
-    function username($username);
+// interface extend another interface
+interface anotherUser extends User { 
+    public function username($username);
+    public function gender();
 }
 
-class Member implements UserOne, UserTwo
-{
-    public function username($username) {
-        echo "This is member username: $username";
+class Member implements anotherUser {
+ 
+    public function username($username) {  
+        echo "The user name is $username";  
     }
+ 
+    public function gender() {
+        echo "The gender is Male";
+    } 
 }
 
 $john = new Member();
-$john->username('john');
+echo $john->username('john');
 ?>
