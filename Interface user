@@ -13,11 +13,11 @@ interface anotherUser extends User {
 class Member implements anotherUser {
  
     public function username($username) {  
-        echo "The user name is $username";  
+       return "The user name is $username";  
     }
  
     public function gender() {
-        echo "The gender is Male";
+        return "The gender is Male";
     } 
 }
 
