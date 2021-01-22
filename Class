@@ -1,5 +1,23 @@
 <?php
-interface User
+interface UserOne
 {
-    // isi interface nanti disini
+    // sama dengan method dalam interface UserTwo
+    function username($username);
 }
+
+interface UserTwo
+{
+    // sama dengan method dalam interface UserOne
+    function username($username);
+}
+
+class Member implements UserOne, UserTwo
+{
+    public function username($username) {
+        echo "This is member username: $username";
+    }
+}
+
+$john = new Member();
+$john->username('john');
+?>
